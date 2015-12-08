@@ -14,12 +14,12 @@ public class Hexadecimal {
     //first overloaded constructor
     public Hexadecimal( int n ) {
 	_decNum = n;
-	_hexNum = decToHex(n);
+	_hexNum = decToHexR(n);
     }
 
     //second overloaded constructor
     public Hexadecimal( String s ) {
-	_decNum = hexToDec(s);
+	_decNum = hexToDecR(s);
 	_hexNum = s;
     }
 
@@ -43,6 +43,15 @@ public class Hexadecimal {
 	return s;
     }
 
+    //recursive decimal to hexadecimal converter
+    public static String decToHexR( int n ) {
+	if (n == 0) return "";
+	else {
+	    int rem = n % 16;
+	    return decToHexR( n / 16 ) + HEXDIGITS.substring(rem, rem + 1); 
+	}
+    }
+    
     //iterative hexadecimal to decimal converter
     public static int hexToDec( String s ) {
 	//initialize sum
@@ -56,6 +65,15 @@ public class Hexadecimal {
 	return n;
     }
 
+    //recursive hexadecimal to decimal converter
+    public static int hexToDecR( String s ) {
+	if (s.length() == 0) return 0;
+	else {
+	    int digit = HEXDIGITS.indexOf( s.substring(0,1) );
+	    return digit * (int)Math.pow(16,s.length() - 1) + hexToDecR(s.substring(1));
+	}
+    }
+    
     //overwritten .equals() method
     public boolean equals( Object other ) {
 	return compareTo(other) == 0;
