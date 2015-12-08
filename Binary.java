@@ -136,3 +136,24 @@ public class Binary {
     }//end main()
 
 } //end class
+
+/*
+    public static String decToHexR( int n ) {
+	int rem = n % 16;
+	String s = "";
+	s = HEXDIGITS.substring(rem, rem + 1) + s;
+	if (n != 0) {
+	    return decToHexR(n / 16) + rem;
+	}
+	return s.substring(1);
+    }
+
+    public static int hexToDecR( String s ) {
+	int n = 0;
+	if (s.length() > 0) {
+	    int temp = HEXDIGITS.indexOf(s.substring(0, 1));
+	    n += temp * Math.pow(16,s.length() - 1) + hexToDecR(s.substring(1));
+	}
+	return n;
+    }
+*/

@@ -5,6 +5,7 @@ public class Hexadecimal {
     private int _decNum;
     private String _hexNum;
 
+    //
     public Hexadecimal() {
 	_decNum = 0;
 	_hexNum = "0";
@@ -29,13 +30,7 @@ public class Hexadecimal {
 	int rem = 0;
 	while (n != 0) {
 	    rem = n % 16;
-	    if (rem < 10) s = rem + s;
-	    if (rem == 10) s = "a" + s;
-	    if (rem == 11) s = "b" + s;
-	    if (rem == 12) s = "c" + s;
-	    if (rem == 13) s = "d" + s;
-	    if (rem == 14) s = "e" + s;
-	    if (rem == 15) s = "f" + s;
+	    s = HEXDIGITS.substring(rem, rem + 1) + s;
 	    n /= 16;
 	}
 	return s;
@@ -44,24 +39,12 @@ public class Hexadecimal {
     public static int hexToDec( String s ) {
 	int n = 0;
 	for(int i = s.length(); i > 0; i--) {
-	    int temp = 0;
-	    try {
-		temp = Integer.parseInt(s.substring(i - 1, i));
-	    }
-	    catch(Exception e) {
-		String tmp = s.substring(i - 1, i);
-		if (tmp.equals("a")) temp = 10;
-	        if (tmp.equals("b")) temp = 11;
-		if (tmp.equals("c")) temp = 12;
-		if (tmp.equals("d")) temp = 13;
-		if (tmp.equals("e")) temp = 14;
-		if (tmp.equals("f")) temp = 15;
-	    }
-	    n += temp * Math.pow(16, s.length() - 1);
+	    int temp = HEXDIGITS.indexOf(s.substring(i - 1, i));
+	    n += temp * Math.pow(16, s.length() - i);
 	}
 	return n;
     }
-
+    
     public boolean equals( Object other ) {
 	return compareTo(other) == 0;
     }
@@ -86,8 +69,8 @@ public class Hexadecimal {
 	Hexadecimal h4 = new Hexadecimal(144);
 
 	Hexadecimal h5 = new Hexadecimal("1");
-	Hexadecimal h6 = new Hexadecimal("1c");
-	Hexadecimal h7 = new Hexadecimal("def");
+	Hexadecimal h6 = new Hexadecimal("1C");
+	Hexadecimal h7 = new Hexadecimal("DEF");
 	Hexadecimal h8 = new Hexadecimal("90");
 
 	Hexadecimal h9 = h1;
