@@ -1,8 +1,7 @@
-/* Nalanda Sharadjaya
-   APCS1 pd9
-   HW43 -- This or That
-   2015-12-08
-*/
+//Team Manish: Nala Shara and Jack Schluger
+//APCS1 pd09
+//HW44 -- This or That or Fourteen Other Things
+//2015-12-08
 
 public class Binary {
 

@@ -1,3 +1,8 @@
+//Team Manish: Nala Shara and Jack Schluger
+//APCS1 pd09
+//HW44 -- This or That or Fourteen Other Things
+//2015-12-08
+
 public class Hexadecimal {
 
     private final static String HEXDIGITS = "0123456789ABCDEF";
