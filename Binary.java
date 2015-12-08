@@ -138,22 +138,33 @@ public class Binary {
 } //end class
 
 /*
+
+    //recursive decimal to hexadecimal converter
     public static String decToHexR( int n ) {
+	//store remainder
 	int rem = n % 16;
 	String s = "";
+	//convert rem to hex representation, add to string (right-justify)
 	s = HEXDIGITS.substring(rem, rem + 1) + s;
 	if (n != 0) {
+	    //return conversion of n / 16 (reset) + stored remainder
 	    return decToHexR(n / 16) + rem;
 	}
+	//cut off leading 0
 	return s.substring(1);
     }
 
+    //recursive hexadecimal to decimal converter
     public static int hexToDecR( String s ) {
+	//initialize sum
 	int n = 0;
 	if (s.length() > 0) {
+	    //convert most recent hex digit to decimal representation
 	    int temp = HEXDIGITS.indexOf(s.substring(0, 1));
+	    //add dec val to sum, cut hex num off by one
 	    n += temp * Math.pow(16,s.length() - 1) + hexToDecR(s.substring(1));
 	}
 	return n;
     }
+
 */

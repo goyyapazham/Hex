@@ -45,11 +45,12 @@ public class Hexadecimal {
 
     //iterative hexadecimal to decimal converter
     public static int hexToDec( String s ) {
+	//initialize sum
 	int n = 0;
 	for(int i = s.length(); i > 0; i--) {
-	    //convert hex digit to decimal representation
+	    //convert most recent hex digit to decimal representation
 	    int temp = HEXDIGITS.indexOf(s.substring(i - 1, i));
-	    //add decimal value (based on location in number) to sum
+	    //add decimal value of most recent hex digit to sum
 	    n += temp * Math.pow(16, s.length() - i);
 	}
 	return n;
