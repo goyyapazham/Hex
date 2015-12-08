@@ -72,21 +72,31 @@ public class Binary {
     
     public int compareTo( Object other ) {
 	if (this == other) return 0;
+	
 	if (other instanceof Binary) {
 	    if (_decNum < ((Binary)other)._decNum) return -1;
 	    if (_decNum > ((Binary)other)._decNum) return 1;
 	    if (_decNum == ((Binary)other)._decNum) return 0;
 	}
-	return 999; //if input is not of class Binary
+	else throw new ClassCastException("\n My first error message! "
+					  + "compareTo() input not Binary!!!"); 
+					  //if input is not of class Binary
+	return 999;
     }
-
+    
     //main method for testing
     public static void main( String[] args ) {
 	
 	System.out.println();
 	System.out.println( "Testing ..." );
 
+
+	Object o = new Object();
+	
+
 	Binary b1 = new Binary(5);
+	//b1.compareTo(o);
+
 	Binary b2 = new Binary(4);
 	Binary b3 = new Binary(19);
 	Binary b4 = new Binary(7);
