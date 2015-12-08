@@ -1,4 +1,4 @@
-//Team Manish: Nala Shara and Jack Schluger
+//Team Manish: Nalanda Sharadjaya and Jack Schluger
 //APCS1 pd09
 //HW44 -- This or That or Fourteen Other Things
 //2015-12-08
